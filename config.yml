@@ -6,6 +6,7 @@ theme: ["PaperMod"]
 params:
   defaultTheme: auto
   disableThemeToggle: False
+  goatcounterCode: omingale # dashboard: https://omingale.goatcounter.com
 
   homeInfoParams:
     Title: 👋Hello!
