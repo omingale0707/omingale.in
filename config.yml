@@ -1,9 +1,8 @@
-baseURL: www.omingale.in
+baseURL: https://www.omingale.in/
 languageCode: en-us
-title: omingale.in
+title: Om Ingale
 theme: ["PaperMod"]
 
-copyright: © 2025 Om Ingale
 params:
   defaultTheme: auto
   disableThemeToggle: False
@@ -20,7 +19,7 @@ params:
     - name: "github"
       url: "https://github.com/omingale0707"
     - name: "linkedin"
-      url: "https://www.linkedin.com/in/omi7/"
+      url: "https://www.linkedin.com/in/omingale/"
     - name: "email"
       url: "mailto:omingale0707@gmail.com"
 
@@ -30,3 +29,7 @@ menus:
     name: About Me
     pageRef: about/
     weight: 1
+
+markup:
+  highlight:
+    noClasses: false

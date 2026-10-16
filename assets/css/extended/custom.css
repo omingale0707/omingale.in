@@ -1,33 +1,35 @@
-/*
-This is just a placeholder blank stylesheet so as to support adding custom styles budled with theme's default styles
-
-Read https://github.com/adityatelange/hugo-PaperMod/wiki/FAQs#bundling-custom-css-with-themes-assets for more info
-*/
-
-.dark{
-    --theme: rgb(9, 10, 12);            
-    --entry: rgb(10, 20, 12);         
-    --primary: rgb(34, 197, 94);      
-    --secondary: rgb(224, 240, 230);  
-    --tertiary: rgb(255, 255, 255);   
-    --content: rgb(196, 196, 197);    
-    --code-block-bg: rgb(46, 46, 51); 
-    --code-bg: rgb(20, 83, 45);       
-    --border: rgb(255, 255, 255);  
-    --post-content: #74b9ff;
-}
+/* Minima Classic colors with Ink & Slate fonts (loaded in layouts/partials/extend_head.html) */
 
 :root {
-    --theme: #FFFFF0;    
-    --entry: rgb(255, 255, 255);    
-    --primary: #436436;     
-    --secondary: rgb(22, 24, 22);   
-    --tertiary: rgb(36, 41, 38);    
-    --content: rgb(9, 10, 12);        
-    --code-block-bg: rgb(28, 29, 33);
-    --code-bg: #98e984;  
-    --border: rgb(187, 247, 208);   
-    --post-content: #0946d7;
+    --theme: #fdfdfd;
+    --entry: #fdfdfd;
+    --primary: #111111;
+    --secondary: #828282;
+    --tertiary: #e8e8e8;
+    --content: #111111;
+    --code-bg: #eeeeff;
+    --code-block-bg: #eeeeff;
+    --border: #e8e8e8;
+    --post-content: #2a7ae2;
+    --inline-code: #111111;
+    --code-text: #111111;
+    --top-bar: #424242;
+}
+
+.dark {
+    --theme: #181818;
+    --entry: #181818;
+    --primary: #eeeeee;
+    --secondary: #8f8f8f;
+    --tertiary: #2e2e2e;
+    --content: #e0e0e0;
+    --code-bg: #24243a;
+    --code-block-bg: #20202e;
+    --border: #2e2e2e;
+    --post-content: #79b8ff;
+    --inline-code: #e8e8f8;
+    --code-text: #e0e0e0;
+    --top-bar: #9a9a9a;
 }
 
 .list {
@@ -35,15 +37,126 @@ Read https://github.com/adityatelange/hugo-PaperMod/wiki/FAQs#bundling-custom-cs
 }
 
 body {
-    font-family: atkinson hyperlegible,sans-serif;
+    font-family: 'Atkinson Hyperlegible', system-ui, sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    -webkit-text-size-adjust: 100%;
-    -moz-text-size-adjust: 100%;
     text-size-adjust: 100%;
-    image-rendering: -webkit-optimize-contrast
+}
+
+h1, h2, h3, .logo a, .entry-header h2, .post-title {
+    font-family: 'Source Serif 4', Georgia, serif;
+}
+
+code {
+    font-family: 'JetBrains Mono', ui-monospace, Menlo, Consolas, monospace;
 }
 
 .post-content a {
     color: var(--post-content);
+    box-shadow: none;
+    text-decoration: underline;
+    text-underline-offset: 3px;
 }
+
+/* Minima-style details: light headings, flat ruled post rows */
+.header {
+    border-bottom: 1px solid var(--border);
+}
+
+.logo a {
+    font-weight: 700;
+    color: var(--top-bar);
+    letter-spacing: -0.5px;
+}
+
+h1, h2, h3, .post-title, .entry-header h2 {
+    font-weight: 400;
+    letter-spacing: -0.5px;
+}
+
+.post-entry {
+    background: transparent;
+    border: 0;
+    border-bottom: 1px solid var(--border);
+    border-radius: 0;
+    padding-inline: 0;
+}
+
+.post-content code {
+    color: var(--inline-code);
+    border: 1px solid var(--border);
+    border-radius: 3px;
+}
+
+.post-content pre code {
+    color: var(--code-text);
+    border: 0;
+}
+
+.post-content .highlight:not(table) {
+    border: 1px solid var(--border);
+    border-radius: 3px;
+}
+
+/* Syntax colors (Minima's GitHub style). Needs markup.highlight.noClasses: false.
+   The span reset clears PaperMod's bundled dark Catppuccin token colors. */
+.post-content .chroma span { color: inherit; }
+.post-content .chroma .hl { background-color: #ffffcc; }
+.post-content .chroma .ln, .post-content .chroma .lnt { color: #999999; }
+.post-content .chroma .c, .post-content .chroma .ch, .post-content .chroma .cm,
+.post-content .chroma .c1, .post-content .chroma .cs { color: #999988; font-style: italic; }
+.post-content .chroma .cp, .post-content .chroma .cpf { color: #999999; font-weight: 700; }
+.post-content .chroma .k, .post-content .chroma .kc, .post-content .chroma .kd,
+.post-content .chroma .kn, .post-content .chroma .kp, .post-content .chroma .kr,
+.post-content .chroma .o, .post-content .chroma .ow { color: #111111; font-weight: 700; }
+.post-content .chroma .kt, .post-content .chroma .nc { color: #445588; font-weight: 700; }
+.post-content .chroma .s, .post-content .chroma .sa, .post-content .chroma .sb,
+.post-content .chroma .sc, .post-content .chroma .dl, .post-content .chroma .sd,
+.post-content .chroma .s2, .post-content .chroma .se, .post-content .chroma .sh,
+.post-content .chroma .si, .post-content .chroma .sx, .post-content .chroma .s1 { color: #dd1144; }
+.post-content .chroma .sr { color: #009926; }
+.post-content .chroma .ss { color: #990073; }
+.post-content .chroma .m, .post-content .chroma .mb, .post-content .chroma .mf,
+.post-content .chroma .mh, .post-content .chroma .mi, .post-content .chroma .il,
+.post-content .chroma .mo { color: #009999; }
+.post-content .chroma .nb, .post-content .chroma .bp { color: #0086b3; }
+.post-content .chroma .na, .post-content .chroma .no, .post-content .chroma .nv,
+.post-content .chroma .vc, .post-content .chroma .vg, .post-content .chroma .vi,
+.post-content .chroma .vm { color: #008080; }
+.post-content .chroma .nf, .post-content .chroma .fm, .post-content .chroma .ne { color: #990000; font-weight: 700; }
+.post-content .chroma .ni { color: #800080; }
+.post-content .chroma .nn { color: #555555; }
+.post-content .chroma .nt { color: #000080; }
+.post-content .chroma .gd { color: #000000; background-color: #ffdddd; }
+.post-content .chroma .gi { color: #000000; background-color: #ddffdd; }
+.post-content .chroma .err { color: #a61717; background-color: #e3d2d2; }
+
+.dark .post-content .chroma .hl { background-color: #3a3a24; }
+.dark .post-content .chroma .ln, .dark .post-content .chroma .lnt { color: #6e6e80; }
+.dark .post-content .chroma .c, .dark .post-content .chroma .ch, .dark .post-content .chroma .cm,
+.dark .post-content .chroma .c1, .dark .post-content .chroma .cs { color: #8b8b9e; }
+.dark .post-content .chroma .cp, .dark .post-content .chroma .cpf { color: #9a9a9a; }
+.dark .post-content .chroma .k, .dark .post-content .chroma .kc, .dark .post-content .chroma .kd,
+.dark .post-content .chroma .kn, .dark .post-content .chroma .kp, .dark .post-content .chroma .kr,
+.dark .post-content .chroma .o, .dark .post-content .chroma .ow { color: #ffffff; }
+.dark .post-content .chroma .kt, .dark .post-content .chroma .nc { color: #a5b4fc; }
+.dark .post-content .chroma .s, .dark .post-content .chroma .sa, .dark .post-content .chroma .sb,
+.dark .post-content .chroma .sc, .dark .post-content .chroma .dl, .dark .post-content .chroma .sd,
+.dark .post-content .chroma .s2, .dark .post-content .chroma .se, .dark .post-content .chroma .sh,
+.dark .post-content .chroma .si, .dark .post-content .chroma .sx, .dark .post-content .chroma .s1 { color: #ff7b9c; }
+.dark .post-content .chroma .sr { color: #7ee787; }
+.dark .post-content .chroma .ss { color: #f0a0d0; }
+.dark .post-content .chroma .m, .dark .post-content .chroma .mb, .dark .post-content .chroma .mf,
+.dark .post-content .chroma .mh, .dark .post-content .chroma .mi, .dark .post-content .chroma .il,
+.dark .post-content .chroma .mo { color: #4fd6d6; }
+.dark .post-content .chroma .nb, .dark .post-content .chroma .bp { color: #79c8ff; }
+.dark .post-content .chroma .na, .dark .post-content .chroma .no, .dark .post-content .chroma .nv,
+.dark .post-content .chroma .vc, .dark .post-content .chroma .vg, .dark .post-content .chroma .vi,
+.dark .post-content .chroma .vm { color: #4fd6d6; }
+.dark .post-content .chroma .nf, .dark .post-content .chroma .fm, .dark .post-content .chroma .ne { color: #ffa198; }
+.dark .post-content .chroma .ni { color: #d2a8ff; }
+.dark .post-content .chroma .nn { color: #b0b0b0; }
+.dark .post-content .chroma .nt { color: #79c8ff; }
+.dark .post-content .chroma .gd { color: #ffdcd7; background-color: #5a1e1e; }
+.dark .post-content .chroma .gi { color: #d2ffd8; background-color: #1e4a26; }
+.dark .post-content .chroma .err { color: #ffa198; background-color: #4a1e1e; }
