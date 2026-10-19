@@ -1,6 +1,6 @@
 ---
 date: '2026-01-06T11:27:55+05:30'
-draft: true
+draft: false
 title: 'Event Driven Architecture on AWS'
 cover:
   image: https://raw.githubusercontent.com/omingale0707/aws-serverless-pos-transactions/main/images/architecture.png
