@@ -1,21 +1,20 @@
 ---
 draft: false
 title: 'About Me'
+hidemeta: true
 ---
 
-**Hello! I'm Om**. 
+<img class="about-photo" src="/profile/me.jpg" alt="Photo of Om Ingale" width="180" height="180">
 
-I am a Data Engineer with an interest in databases and distributed systems. I am currently working as a Cloud Data Engineer @ [Exceliq Consulting Inc.](https://www.linkedin.com/company/exceliq-consulting-india-pvt-ltd/posts/?feedView=all)
+Hi there! I'm **Om**, a Data Engineer by profession based in the Chicago area. I enjoy working with databases and distributed systems. I currently work as Cloud Data Engineer @ [Exceliq Consulting Inc.](https://exeliqconsulting.com/)
 
-I have started this personal website as a way to document my learnings and share my work with others.
+I have started this personal website as a way to document my learnings and share my work with others. Occasionally, I blog about topics related to data engineering.
 
-If you have any feedback, questions or suggestions, or just want to say hi, feel free to reach out to me via [email](mailto:omingale0707@gmail.com) or [LinkedIn](https://www.linkedin.com/in/omingale/)
+If you have feedback, suggestions, or potential work opportunities, feel free to reach out to me via [email](mailto:omingale0707@gmail.com) or [LinkedIn](https://www.linkedin.com/in/omingale/). I am always happy to learn from others and collaborate.
 
-### Work Experience
-- Cloud Data Engineer @ [Exceliq Consulting Inc.](https://www.linkedin.com/company/exceliq-consulting-india-pvt-ltd/posts/?feedView=all) | July 2022 - Present
-- Data Engineer @ [Tesseract Solutions](https://www.linkedin.com/company/tesseract-solutions-pvt-ltd/posts/?feedView=all) | June 2020 - June 2022
+### On this site
+- [Resume](/resume/) - My professional experience.
+- [Blog](/blog/) - My technical blog posts.
 
-> More detailed professional experience on my [LinkedIn profile](https://www.linkedin.com/in/omingale/)
-
-### Book Readings
-- Currently I am reading **Designing Data Intensive Applications**
+> [!NOTE]
+> Opinions on this site are my own and do not represent my employer.

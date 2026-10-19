@@ -6,14 +6,14 @@
     --primary: #111111;
     --secondary: #828282;
     --tertiary: #e8e8e8;
-    --content: #111111;
+    --content: #444444;
     --code-bg: #eeeeff;
     --code-block-bg: #eeeeff;
     --border: #e8e8e8;
     --post-content: #2a7ae2;
     --inline-code: #111111;
     --code-text: #111111;
-    --top-bar: #424242;
+    --logo: #1b2a3d;
 }
 
 .dark {
@@ -22,14 +22,14 @@
     --primary: #eeeeee;
     --secondary: #8f8f8f;
     --tertiary: #2e2e2e;
-    --content: #e0e0e0;
+    --content: #c4c4c5;
     --code-bg: #24243a;
     --code-block-bg: #20202e;
     --border: #2e2e2e;
     --post-content: #79b8ff;
     --inline-code: #e8e8f8;
     --code-text: #e0e0e0;
-    --top-bar: #9a9a9a;
+    --logo: #e3e9f1;
 }
 
 .list {
@@ -43,10 +43,6 @@ body {
     text-size-adjust: 100%;
 }
 
-h1, h2, h3, .logo a, .entry-header h2, .post-title {
-    font-family: 'Source Serif 4', Georgia, serif;
-}
-
 code {
     font-family: 'JetBrains Mono', ui-monospace, Menlo, Consolas, monospace;
 }
@@ -58,19 +54,22 @@ code {
     text-underline-offset: 3px;
 }
 
-/* Minima-style details: light headings, flat ruled post rows */
+/* Minima-style details: bold headings, flat ruled post rows */
 .header {
     border-bottom: 1px solid var(--border);
 }
 
 .logo a {
-    font-weight: 700;
-    color: var(--top-bar);
+    font-family: 'Honk', system-ui, sans-serif;
+    font-size: 36px;
+    font-weight: 400;
+    color: var(--logo);
     letter-spacing: -0.5px;
 }
 
-h1, h2, h3, .post-title, .entry-header h2 {
-    font-weight: 400;
+h1, h2, h3, h4, .post-title, .entry-header h2 {
+    color: var(--primary);
+    font-weight: 700;
     letter-spacing: -0.5px;
 }
 
@@ -86,6 +85,8 @@ h1, h2, h3, .post-title, .entry-header h2 {
     color: var(--inline-code);
     border: 1px solid var(--border);
     border-radius: 3px;
+    margin: 0 1px;
+    padding: 1px 5px;
 }
 
 .post-content pre code {
@@ -160,3 +161,162 @@ h1, h2, h3, .post-title, .entry-header h2 {
 .dark .post-content .chroma .gd { color: #ffdcd7; background-color: #5a1e1e; }
 .dark .post-content .chroma .gi { color: #d2ffd8; background-color: #1e4a26; }
 .dark .post-content .chroma .err { color: #ffa198; background-color: #4a1e1e; }
+
+
+/* covers show on the home page list, not on section lists like /blog/ */
+.page-header ~ .post-entry .entry-cover {
+    display: none;
+}
+
+/* Resume page sections, timeline and certification badges (content/resume.md) */
+.post-content section.homepg {
+    margin-bottom: 2rem;
+}
+
+.post-content .section-header {
+    margin-bottom: 1rem;
+    padding-bottom: 0.8rem;
+    border-bottom: 1px solid var(--border);
+}
+
+.post-content .section-header h2 {
+    margin: 0;
+    font-size: 1.3rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.timeline {
+    position: relative;
+    padding-left: 20px;
+}
+
+.timeline::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 1px;
+    background-color: var(--border);
+}
+
+.timeline-item {
+    position: relative;
+    margin-bottom: 1.8rem;
+}
+
+.timeline-item::before {
+    content: "";
+    position: absolute;
+    left: -24px;
+    top: 5px;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: var(--tertiary);
+}
+
+.timeline-item.current::before {
+    left: -25px;
+    top: 4px;
+    width: 10px;
+    height: 10px;
+    background-color: var(--secondary);
+}
+
+.post-content .timeline-item h3 {
+    margin: 0;
+    font-size: 1rem;
+    font-weight: 600;
+    letter-spacing: 0;
+}
+
+.post-content .timeline-item p {
+    margin: 0.3rem 0 0;
+    font-size: 0.9rem;
+    color: var(--secondary);
+}
+
+.cert-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin: 1rem 0;
+}
+
+.cert-badge {
+    flex: 0 0 calc(33% - 0.7rem);
+    min-width: 10rem;
+    padding: 1rem;
+    text-align: center;
+    background: var(--entry);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+}
+
+.post-content .cert-badge h4 {
+    margin: 0 0 0.5rem;
+}
+
+.post-content .cert-badge p {
+    margin: 0;
+    font-size: 0.9rem;
+}
+
+@media (max-width: 768px) {
+    .cert-badge {
+        flex: 0 0 calc(50% - 0.5rem);
+    }
+}
+
+/* Note and warning boxes from "> [!NOTE]" / "> [!WARNING]" (layouts/_markup/render-blockquote.html) */
+.post-content .admonition {
+    --admonition: var(--post-content);
+    margin: 0 0 var(--content-gap);
+    padding: 0.8rem 1rem;
+    border-inline-start: 4px solid var(--admonition);
+    border-radius: 0 var(--radius) var(--radius) 0;
+    background: var(--code-bg);
+}
+
+.post-content .admonition.warning {
+    --admonition: #d97706;
+}
+
+.post-content .admonition > :last-child {
+    margin-bottom: 0;
+}
+
+.post-content .admonition-title {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 0.4rem;
+    font-weight: 700;
+    color: var(--admonition);
+}
+
+.post-content .admonition-title svg {
+    width: 1.2em;
+    height: 1.2em;
+    flex-shrink: 0;
+}
+
+/* Profile photo on the About page, beside the intro; stacks above it on phones */
+.post-content .about-photo {
+    float: right;
+    width: 180px;
+    height: 180px;
+    margin: 0 0 1rem 1.5rem;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+@media (max-width: 600px) {
+    .post-content .about-photo {
+        float: none;
+        display: block;
+        margin: 0 auto 1rem;
+    }
+}
