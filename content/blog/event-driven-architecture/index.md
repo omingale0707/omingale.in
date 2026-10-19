@@ -1,5 +1,5 @@
 ---
-date: '2026-01-06T11:27:55+05:30'
+date: '2026-10-20T00:00:00-05:00'
 draft: false
 title: 'Event Driven Architecture on AWS'
 cover:
